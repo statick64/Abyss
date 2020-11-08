@@ -1,0 +1,76 @@
+     
+         class ThreadClass(QThread):
+                def __init__ (self, parent = None):
+                        super(ThreadClass, self), __init__()
+                        
+                def start_progress(self):
+                        downloader = Downloader("0")
+                        url = self.input_text.toPlainText()
+                        while True:
+                                downloader.download(url)
+                                self.emit(QtCore.SIGNAL('download'), int(downloader.percent))
+
+
+
+
+
+                 
+        def start_progress(self):
+                downloader = Downloader("0")
+                url = self.input_text.toPlainText()
+                downloader.download(url)
+                while True:
+                        val = int(downloader.percent)
+                        self.emit(QtCore.SIGNAL('download'),val )
+						
+						
+						
+ ydl_opts = {
+                'format': 'bestaudio/best',
+                'extractaudio': True,
+                'audioformat': "mp3",
+                'progress_hooks': [self.my_hook],
+                'noplaylist': True
+            }
+    def my_hook(self, d):
+        if d['status'] == 'finished':
+            file_tuple = os.path.split(os.path.abspath(d['filename']))
+            print("Done downloading {}".format(file_tuple[1]))
+        if d['status'] == 'downloading':
+            p = d['_percent_str']
+            p = p.replace('%','')
+            self.progress.setValue(float(p))
+            print(d['filename'], d['_percent_str'], d['_eta_str'])
+
+
+
+
+        def get_opts(self):
+                ydl_opts = {
+                        'format': '133',
+                        'progress_hooks': [self.my_hook],
+                }
+
+
+
+
+self.User_404 = QtWidgets.QFrame(self.centralwidget)
+self.User_404.setGeometry(QtCore.QRect(180, 0, 661, 520))
+sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+sizePolicy.setHorizontalStretch(0)
+sizePolicy.setVerticalStretch(0)
+sizePolicy.setHeightForWidth(self.User_404.sizePolicy().hasHeightForWidth())
+self.User_404.setSizePolicy(sizePolicy)
+self.User_404.setVisible(False)
+self.User_404.setStyleSheet("background-color: #ECF3FA; ")
+self.User_404.setFrameShape(QtWidgets.QFrame.StyledPanel)
+self.User_404.setFrameShadow(QtWidgets.QFrame.Raised)
+self.User_404.setObjectName("User_404")
+self.l_404 = QtWidgets.QLabel(self.User_404)
+self.l_404.setGeometry(QtCore.QRect(180, 0, 661, 520))
+self.l_404.setObjectName("l_404")
+self.l_404.setPixmap(QtGui.QPixmap('image_404.jpg'))
+self.l_404.setScaledContents(True)
+
+
+clicked.connect(self.download_clicker)

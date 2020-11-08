@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="images">
+    <file>widow_icon.png</file>
+    <file>Quicksand-VariableFont_wght.ttf</file>
+    <file>bin.png</file>
+    <file>Converter.png</file>
+    <file>Settings.png</file>
+    <file>Everything.png</file>
+    <file>stop.png</file>
+    <file>User.png</file>
+    <file>download.png</file>
+  </qresource>
+</RCC>

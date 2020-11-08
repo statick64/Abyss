@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="popup">
+    <file>no_image.png</file>
+    <file>Stroke 169.png</file>
+    <file>widow_icon.png</file>
+  </qresource>
+</RCC>
